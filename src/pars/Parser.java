@@ -71,6 +71,9 @@ public class Parser {
         BigDecimal result = new BigDecimal("0");
         link_for_line = expstr;
         index = 0;
+
+
+
         getToken();
         if (lexeme.equals(EOF))
             handleErr(NOEXP);   //  Нет выражения
@@ -89,6 +92,13 @@ public class Parser {
                 c == '-') {
             getToken();
             partialResult = threee();
+
+
+
+
+
+
+
             switch (c) {
                 case '-':
                     result = result.subtract(partialResult);
@@ -101,7 +111,18 @@ public class Parser {
         return result;
     }
 
-    public BigDecimal threee() throws ParserException {
+    publ
+
+
+
+
+
+
+
+
+
+
+    ic BigDecimal threee() throws ParserException {
         int one = 0;
         int two = 0;
         int n = 0;
@@ -130,6 +151,19 @@ public class Parser {
                         n = two;
                     }
                     result = result.divide(partialResult, n, BigDecimal.ROUND_CEILING);
+
+
+
+
+
+
+
+
+
+
+
+
+
                     break;
                 }
                 case '%':
@@ -147,6 +181,22 @@ public class Parser {
     public BigDecimal evalExp4() throws ParserException {
 
         BigDecimal result;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         BigDecimal partialResult;
         BigDecimal a;
         int t;
@@ -174,6 +224,20 @@ public class Parser {
         String c;
         c = " ";
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         if ((lexemeType == DELIMITER) && lexeme.equals("+") ||
                 lexeme.equals("-")) {
             c = lexeme;
@@ -200,6 +264,22 @@ public class Parser {
     }
 
     public BigDecimal atom() throws ParserException {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         BigDecimal result = new BigDecimal("0");
         switch (lexemeType) {
             case NUMBER:
@@ -226,6 +306,23 @@ public class Parser {
                 "Отсутствует выражение",
                 "Деление на 0"
         };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         throw new ParserException(err[nOEXP2]);
     }
 

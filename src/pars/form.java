@@ -244,6 +244,21 @@ public class form extends JFrame {
                 }
                 if (!error) {
                     textEdit2.setText(result.toString());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     error = false;
                 }
                 textEdit1.requestFocus();
@@ -273,6 +288,28 @@ public class form extends JFrame {
             }
         });
         button2.setFont(new Font("Tahoma", Font.PLAIN, 20));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         JButton button3 = new JButton("3");
         button3.setBackground(new Color(240, 255, 255));
@@ -307,6 +344,28 @@ public class form extends JFrame {
                 textEdit1.setText(str);
                 textEdit1.requestFocus();
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         });
         button5.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
@@ -340,6 +399,52 @@ public class form extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 str = str + '8';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        slkdfnsrjdhnglfsdkg
+                sdg
+                sfd
+                        g
+                        dfsg
+                                s
+                                dfg
+                                        fs
+                                        d
+                                                f
+                                                sd
+                                                        f
+                                                        sd
+                                                                f
+                                                                sd
+                                                                        f
+                                                                        s
+                                                                                d
+                                                                                gfsd
+                                                                                        gfsd
+
+
+
+
+
+
+
+
+
+
+
+
                 textEdit1.setText(str);
                 textEdit1.requestFocus();
             }
