@@ -201,7 +201,19 @@ public class Parser {
 
     public BigDecimal atom() throws ParserException {
         BigDecimal result = new BigDecimal("0");
-
+        switch (lexemeType) {
+            case NUMBER:
+                try {
+                    result = new BigDecimal(lexeme);
+                } catch (NumberFormatException exc) {
+                    handleErr(SYNTAX_ERROR);
+                }
+                getToken();
+                break;
+            default:
+                handleErr(SYNTAX_ERROR);
+                break;
+        }
         return result;
     }
 
