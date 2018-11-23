@@ -67,28 +67,28 @@ public class Parser {
         return false;
     }
 
-    public BigDecimal onee(String expstr) throws ParserException {
+    public BigDecimal evalExp1(String expstr) throws ParserException {
         BigDecimal result = new BigDecimal("0");
         link_for_line = expstr;
         index = 0;
         getToken();
         if (lexeme.equals(EOF))
             handleErr(NOEXP);   //  Нет выражения
-        result = twoo();
+        result = evalExp2();
         if (!lexeme.equals(EOF))
             handleErr(SYNTAX_ERROR);
         return result;
     }
 
-    public BigDecimal twoo() throws ParserException {
+    public BigDecimal evalExp2() throws ParserException {
         char c;
         BigDecimal result;
         BigDecimal partialResult;
-        result = threee();
+        result = evalExp3();
         while ((c = lexeme.charAt(0)) == '+' ||
                 c == '-') {
             getToken();
-            partialResult = threee();
+            partialResult = evalExp3();
             switch (c) {
                 case '-':
                     result = result.subtract(partialResult);
@@ -101,7 +101,7 @@ public class Parser {
         return result;
     }
 
-    public BigDecimal threee() throws ParserException {
+    public BigDecimal evalExp3() throws ParserException {
         int one = 0;
         int two = 0;
         int n = 0;
@@ -191,7 +191,7 @@ public class Parser {
         BigDecimal result;
         if (lexeme.equals("(")) {
             getToken();
-            result = twoo();
+            result = evalExp2();
             if (!lexeme.equals(")"))
                 handleErr(UNBALPARENS);
             getToken();
