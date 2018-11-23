@@ -178,10 +178,10 @@ public class form extends JFrame {
                 }
                 if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
                     BigDecimal result = new BigDecimal("0");
-                    Parser myParser = new Parser();
+                    Pars_str myParser = new Pars_str();
                     try {
                         result = myParser.evaluate(str);
-                    } catch (ParserException e) {
+                    } catch (Pars_str_2 e) {
                         error = true;
                         textEdit2.setText("Некорректное выражение");
                     } catch (Exception e) {
@@ -229,11 +229,11 @@ public class form extends JFrame {
             public void mouseClicked(MouseEvent arg0) {
                 boolean error = false;
                 BigDecimal result = new BigDecimal("0");
-                Parser myParser = new Parser();
+                Pars_str myParser = new Pars_str();
                 try {
                     str = textEdit1.getText();
                     result = myParser.evaluate(str);
-                } catch (ParserException e) {
+                } catch (Pars_str_2 e) {
                     error = true;
                     textEdit2.setText("Некорректное выражение");
                     textEdit1.requestFocus();
