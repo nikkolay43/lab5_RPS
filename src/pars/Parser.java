@@ -2,7 +2,7 @@ package pars;
 
 import java.math.BigDecimal;
 
-public class Pars_str {
+public class Parser {
     final int NONE = 0;
     final int DELIMITER = 1;
     final int VARIABLE = 2;
@@ -67,7 +67,7 @@ public class Pars_str {
         return false;
     }
 
-    public BigDecimal evaluate(String expstr) throws Pars_str_2 {
+    public BigDecimal evaluate(String expstr) throws ParserException {
         BigDecimal result = new BigDecimal("0");
         link_for_line = expstr;
         index = 0;
@@ -80,7 +80,7 @@ public class Pars_str {
         return result;
     }
 
-    public BigDecimal evalExp2() throws Pars_str_2 {
+    public BigDecimal evalExp2() throws ParserException {
         char c;
         BigDecimal result;
         BigDecimal partialResult;
@@ -101,7 +101,7 @@ public class Pars_str {
         return result;
     }
 
-    public BigDecimal evalExp3() throws Pars_str_2 {
+    public BigDecimal evalExp3() throws ParserException {
         int one = 0;
         int two = 0;
         int n = 0;
@@ -144,7 +144,7 @@ public class Pars_str {
         return result;
     }
 
-    public BigDecimal evalExp4() throws Pars_str_2 {
+    public BigDecimal evalExp4() throws ParserException {
 
         BigDecimal result;
         BigDecimal partialResult;
@@ -169,7 +169,7 @@ public class Pars_str {
         return result;
     }
 
-    public BigDecimal evalExp5() throws Pars_str_2 {
+    public BigDecimal evalExp5() throws ParserException {
         BigDecimal result;
         String c;
         c = " ";
@@ -187,7 +187,7 @@ public class Pars_str {
         return result;
     }
 
-    public BigDecimal evalExp6() throws Pars_str_2 {
+    public BigDecimal evalExp6() throws ParserException {
         BigDecimal result;
         if (lexeme.equals("(")) {
             getToken();
@@ -199,7 +199,7 @@ public class Pars_str {
         return result;
     }
 
-    public BigDecimal atom() throws Pars_str_2 {
+    public BigDecimal atom() throws ParserException {
         BigDecimal result = new BigDecimal("0");
         switch (lexemeType) {
             case NUMBER:
@@ -218,7 +218,7 @@ public class Pars_str {
     }
 
     //  Кинуть ошибку
-    private void handleErr(int nOEXP2) throws Pars_str_2 {
+    private void handleErr(int nOEXP2) throws ParserException {
 
         String[] err = {
                 "Синтаксическая ошибка",
@@ -226,7 +226,7 @@ public class Pars_str {
                 "Отсутствует выражение",
                 "Деление на 0"
         };
-        throw new Pars_str_2(err[nOEXP2]);
+        throw new ParserException(err[nOEXP2]);
     }
 
 
