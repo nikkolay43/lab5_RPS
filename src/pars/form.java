@@ -180,7 +180,7 @@ public class form extends JFrame {
                     BigDecimal result = new BigDecimal("0");
                     Parser myParser = new Parser();
                     try {
-                        result = myParser.evaluate(str);
+                        result = myParser.onee(str);
                     } catch (ParserException e) {
                         error = true;
                         textEdit2.setText("Некорректное выражение");
@@ -232,7 +232,7 @@ public class form extends JFrame {
                 Parser myParser = new Parser();
                 try {
                     str = textEdit1.getText();
-                    result = myParser.evaluate(str);
+                    result = myParser.onee(str);
                 } catch (ParserException e) {
                     error = true;
                     textEdit2.setText("Некорректное выражение");
@@ -250,9 +250,9 @@ public class form extends JFrame {
             }
         });
 
-        JButton button1 = new JButton("1");
-        button1.setBackground(new Color(240, 255, 255));
-        button1.addMouseListener(new MouseAdapter() {
+        JButton knopka_1 = new JButton("1");
+        knopka_1.setBackground(new Color(240, 255, 255));
+        knopka_1.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 str = str + '1';
@@ -260,7 +260,7 @@ public class form extends JFrame {
                 textEdit1.requestFocus();
             }
         });
-        button1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        knopka_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
         JButton button2 = new JButton("2");
         button2.setBackground(new Color(240, 255, 255));
@@ -542,7 +542,7 @@ public class form extends JFrame {
                                                                 .addGap(18)
                                                                 .addComponent(button_xy, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE))
                                                         .addGroup(gl_contentPane.createSequentialGroup()
-                                                                .addComponent(button1, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(knopka_1, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
                                                                 .addGap(18)
                                                                 .addComponent(button2, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
                                                                 .addGap(18)
@@ -607,7 +607,7 @@ public class form extends JFrame {
                                                         .addComponent(button_xy, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE))
                                                 .addGap(11)
                                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-                                                        .addComponent(button1, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(knopka_1, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(button2, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
                                                         .addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
                                                                 .addComponent(button3, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
